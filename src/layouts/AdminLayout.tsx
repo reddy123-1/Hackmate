@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { logoutAdmin } from '../services/auth';
+import Logo from '../components/Logo';
 import toast from 'react-hot-toast';
 
 const sidebarLinks = [
@@ -30,20 +31,8 @@ export default function AdminLayout() {
 
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
-      <div className="p-4 flex items-center gap-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-500 shrink-0">
-          <Zap className="h-4 w-4 text-white" />
-        </div>
-        {!collapsed && (
-          <motion.span
-            initial={{ opacity: 0, width: 0 }}
-            animate={{ opacity: 1, width: 'auto' }}
-            exit={{ opacity: 0, width: 0 }}
-            className="text-lg font-bold dark:text-white text-surface-900 whitespace-nowrap"
-          >
-            HackMate
-          </motion.span>
-        )}
+      <div className="p-4">
+        <Logo size={24} iconOnly={collapsed} />
       </div>
 
       <nav className="flex-1 px-3 py-2 space-y-1">
@@ -103,10 +92,8 @@ export default function AdminLayout() {
       {/* Mobile header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 h-14 glass flex items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-500">
-            <Zap className="h-3.5 w-3.5 text-white" />
-          </div>
-          <span className="text-sm font-bold dark:text-white text-surface-900">Admin</span>
+          <Logo size={22} />
+          <span className="text-xs font-semibold px-2 py-0.5 rounded dark:bg-white/5 bg-black/5 dark:text-surface-400 text-surface-600">Admin</span>
         </div>
         <button onClick={() => setMobileOpen(!mobileOpen)} className="p-2">
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

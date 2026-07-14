@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Zap, Code2, Globe, Heart } from 'lucide-react';
+import { Code2, Globe, Heart } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -8,10 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-500">
-                <Zap className="h-4 w-4 text-white" />
-              </div>
-              <span className="text-lg font-bold dark:text-white text-surface-900">HackMate</span>
+              <Logo size={28} />
             </Link>
             <p className="dark:text-surface-400 text-surface-600 text-sm max-w-sm leading-relaxed">
               Connecting talented hackers with the perfect hackathon teams. Find your next adventure and build something amazing together.
@@ -46,7 +44,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-6 border-t dark:border-white/5 border-black/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs dark:text-surface-500 text-surface-500">
-            © {new Date().getFullYear()} HackMate. All rights reserved.
+            © {new Date().getFullYear()} HackerMate. All rights reserved.
           </p>
           <p className="text-xs dark:text-surface-500 text-surface-500 flex items-center gap-1">
             Built with <Heart className="h-3 w-3 text-red-400" /> for hackers

@@ -222,7 +222,7 @@ export default function HomePage() {
               <div>
                 <h3 className="text-2xl font-bold dark:text-white text-surface-900 mb-1">
                   {/* EDIT: Replace with your name */}
-                  Your Name Here
+                  TEJAS R
                 </h3>
                 <p className="text-brand-400 font-medium text-sm">Full Stack Developer & AI Enthusiast</p>
               </div>

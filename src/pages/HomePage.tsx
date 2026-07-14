@@ -115,17 +115,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full dark:bg-white/5 bg-black/5 border dark:border-white/10 border-black/10 mb-8"
-            >
-              <Sparkles className="h-3.5 w-3.5 text-brand-400" />
-              <span className="text-xs font-medium dark:text-surface-300 text-surface-700">
-                The smarter way to find hackathon teammates
-              </span>
-            </motion.div>
+
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
               <span className="dark:text-white text-surface-900">Find Your Perfect</span>
@@ -200,7 +190,7 @@ export default function HomePage() {
           >
             <span className="text-xs font-semibold text-brand-400 uppercase tracking-widest">About Me</span>
             <h2 className="text-3xl sm:text-4xl font-bold dark:text-white text-surface-900 mt-3">
-              The Person Behind HackMate
+              The Person Behind HackerMate
             </h2>
           </motion.div>
 

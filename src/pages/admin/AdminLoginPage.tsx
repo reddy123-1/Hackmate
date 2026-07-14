@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Zap, Mail, Lock, Loader2, AlertCircle } from 'lucide-react';
 import { loginAdmin } from '../../services/auth';
 
+import Logo from '../../components/Logo';
+
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -35,12 +37,10 @@ export default function AdminLoginPage() {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         className="w-full max-w-sm relative z-10"
       >
-        <div className="text-center mb-8">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-purple-500 mx-auto mb-4 shadow-lg shadow-brand-500/20">
-            <Zap className="h-6 w-6 text-white" />
-          </div>
+        <div className="text-center mb-8 flex flex-col items-center">
+          <Logo size={44} iconOnly={true} className="mb-4" />
           <h1 className="text-2xl font-bold dark:text-white text-surface-900">Admin Login</h1>
-          <p className="text-sm dark:text-surface-400 text-surface-600 mt-1">Sign in to manage HackMate</p>
+          <p className="text-sm dark:text-surface-400 text-surface-600 mt-1">Sign in to manage HackerMate</p>
         </div>
 
         <div className="glass-card rounded-2xl p-6">
@@ -65,7 +65,7 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="input-field !pl-10"
-                  placeholder="admin@hackmate.dev"
+                  placeholder="admin@hackermate.dev"
                   required
                 />
               </div>

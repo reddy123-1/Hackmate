@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Moon, Sun, Zap } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import Logo from './Logo';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -27,10 +28,11 @@ export default function Navbar() {
   useEffect(() => setMobileOpen(false), [location]);
 
   const handleNavClick = (href: string) => {
+    setMobileOpen(false);
     if (href.startsWith('/#')) {
-      const id = href.slice(2);
+      const id = href.replace('/#', '');
+      const el = document.getElementById(id);
       if (location.pathname === '/') {
-        const el = document.getElementById(id);
         el?.scrollIntoView({ behavior: 'smooth' });
       } else {
         window.location.href = href;
@@ -53,12 +55,7 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-500 shadow-lg shadow-brand-500/20">
-                <Zap className="h-4 w-4 text-white" />
-              </div>
-              <span className="text-lg font-bold tracking-tight dark:text-white text-surface-900 group-hover:text-brand-400 transition-colors">
-                HackMate
-              </span>
+              <Logo size={28} />
             </Link>
 
             <div className="hidden md:flex items-center gap-1">
